@@ -1,0 +1,98 @@
+.pricing {
+	padding: 1.5rem;
+	text-align: center;
+}
+
+.pricing__header {
+	margin-bottom: 2rem;
+	padding: 2rem 0;
+	background-image: url('/images/pattern-circles.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.pricing__heading {
+	padding: 0.5rem;
+	font-size: 1.25rem;
+	font-weight: $bold;
+	line-height: 1.75rem;
+	color: $strong-text;
+}
+
+.pricing__tagline {
+	max-width: 11rem;
+	margin: auto;
+	font-size: 0.8125rem;
+	font-size: $medium;
+	line-height: 1.5rem;
+	color: $main-text;
+}
+
+.pricing__form {
+	padding: 2rem 1.5rem;
+	border-radius: 0.5rem;
+	background: $card-background;
+	box-shadow: 0px 1.25rem 1.875rem -0.25rem rgba(127, 137, 185, 0.152073);
+}
+
+.pricing__info {
+    margin-bottom: 2.25rem;
+}
+
+.pricing__views {
+	font-size: 0.75rem;
+	font-weight: $bold;
+	color: $main-text;
+	text-transform: uppercase;
+	letter-spacing: 1.8px;
+}
+
+.pricing__price__input {
+	padding: 1.5rem 0;
+}
+
+.pricing__price__slider {
+	width: 100%;
+	height: 0.5rem;
+	background: transparent;
+	border-radius: 5px;
+	-webkit-appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include track;
+	}
+	&::-moz-range-track {
+		@include track;
+	}
+	&::-ms-track {
+		@include track;
+	}
+
+	&::-ms-fill-upper {
+		@include track;
+	}
+
+	&::-webkit-slider-thumb {
+		@include thumb;
+	}
+
+	&::-moz-range-thumb {
+		@include thumb;
+	}
+
+	&::-ms-thumb {
+		@include thumb;
+	}
+
+	// &::-moz-range-progress {
+	// 	@include progress;
+	// }
+
+	// &::-ms-fill-lower {
+	// 	@include progress;
+	// }
+}

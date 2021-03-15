@@ -13,7 +13,7 @@
 
   <title>Interactive pricing component</title>
 
-
+  <script src="/app.js" defer></script>
 </head>
 <body>
   <main>
@@ -28,9 +28,9 @@
             <span class="js-views">100K</span>
             Pageviews
           </span>
-          <div class="pricing__price__input"></div>
+          <div class="pricing__price__input">
             <label for="pageviews" class="hidden-visually">Choose monthly pageviews</label>
-            <input type="range" min="1" max="5" step="1" value="3" id="pageviews">
+            <input type="range" min="0" max="4" step="1" value="2" id="pageviews" class="pricing__price__slider">
           </div>
           <span class="pricing__price" aria-live="polite">
             $ <span class="js-price">16.00</span>

@@ -1,0 +1,33 @@
+@mixin track() {
+	width: 100%;
+	height: 0.5rem;
+	border-color: transparent;
+	border-radius: 5px;
+	color: transparent;
+	cursor: pointer;
+}
+
+@mixin thumb() {
+	-webkit-appearance: none;
+	height: 2.5rem;
+	width: 2.5rem;
+	margin-top: calc(0.5rem/2 - 2.5rem/2); //track height, thumb height
+	background-color: $slider-thumb;
+	background-image: url('/images/icon-slider.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0 0.75rem 1.5rem rgba(0, 255, 231, 0.6);
+
+    &:focus {
+        outline: 1px solid black;
+    }
+}
+
+// @mixin progress() {
+// 	height: 0.5rem;
+// 	background-color: $slider-bar;
+// 	border-radius: 5px;
+// }
