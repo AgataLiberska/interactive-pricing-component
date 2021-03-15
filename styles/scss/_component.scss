@@ -1,5 +1,5 @@
 .pricing {
-	padding: 1.5rem;
+	padding: 2.5rem 1.5rem 5.5rem;
 	text-align: center;
 }
 
@@ -23,13 +23,15 @@
 	max-width: 11rem;
 	margin: auto;
 	font-size: 0.8125rem;
-	font-size: $medium;
+	font-weight: $medium;
 	line-height: 1.5rem;
 	color: $main-text;
 }
 
 .pricing__form {
-	padding: 2rem 1.5rem;
+    max-width: 25rem;
+    margin: auto;
+	padding: 2rem 0;
 	border-radius: 0.5rem;
 	background: $card-background;
 	box-shadow: 0px 1.25rem 1.875rem -0.25rem rgba(127, 137, 185, 0.152073);
@@ -37,6 +39,7 @@
 
 .pricing__info {
     margin-bottom: 2.25rem;
+    padding: 0 1.5rem;
 }
 
 .pricing__views {
@@ -48,7 +51,7 @@
 }
 
 .pricing__price__input {
-	padding: 1.5rem 0;
+	padding: 1.5rem 0 1.75rem;
 }
 
 .pricing__price__slider {
@@ -96,4 +99,81 @@
         box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem $slider-bar;
     }
 
+}
+
+.pricing__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: $bold;
+    line-height: 2.75rem;
+    color: $strong-text;
+    letter-spacing: -0.8px;
+}
+
+.pricing__month {
+    display: inline-block;
+    padding-left: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: $medium;
+    line-height: 1.25rem;
+    color: $main-text;
+    letter-spacing: 0px;
+}
+
+.pricing__billing {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem 2.25rem;
+    border: 0;
+}
+
+.pricing__toggle {
+
+}
+
+.pricing__summary {
+    border-top: 1px solid $slider-background;
+}
+
+.pricing__benefits {
+    list-style: none;
+    margin: auto;
+    padding: 2.5rem 1rem 2rem;
+    font-size: 0.75rem;
+    font-weight: $medium;
+    line-height: 1rem;
+    color: $main-text;
+}
+
+.pricing__benefits__item {
+    padding-bottom: 0.625rem;
+
+    &::before {
+        content: url('/images/icon-check.svg');
+        display: inline;
+        padding-right: 1rem;
+    }
+}
+
+.pricing__submit {
+    padding: 0.75rem 3rem;
+    background-color: $cta-background;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: $font;
+    font-size: 0.75rem;
+    color: $cta-text;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+        color: $cta-hover;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem $cta-text;
+    }
 }
