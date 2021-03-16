@@ -166,8 +166,8 @@
             position: absolute;
             right: $toggle-padding;
             top: $toggle-padding;
-            height: calc(1.5rem - (2 * 2px)); //height of the switch - double padding
-            width: calc(1.5rem - (2 * 2px));
+            height: calc(1.5rem - (2 * #{$toggle-padding})); //height of the switch - double padding
+            width: calc(1.5rem - (2 * #{$toggle-padding}));
             background-color: #fff;
             border-radius: 100%;
             transition: right 0.2s ease-in-out;
@@ -235,7 +235,7 @@
     line-height: 0.8rem;
     color: $discount-text;
 
-    @media screen and (min-width: $small) {
+    @include breakpoint-up(medium) {
         top: 0rem;
         right: -3rem;
     }

@@ -21,3 +21,10 @@
 	cursor: pointer;
 }
 
+$breakpoints-up: ( "medium" : "25.75rem", "large" : "48rem");
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get( $breakpoints-up, $size )) {
+        @content;
+    }
+}

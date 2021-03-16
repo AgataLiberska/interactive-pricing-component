@@ -360,7 +360,7 @@ main {
   color: #ff8c66;
 }
 
-@media screen and (min-width: 412px) {
+@media (min-width: 25.75rem) {
   .pricing__label__discount {
     top: 0rem;
     right: -3rem;
