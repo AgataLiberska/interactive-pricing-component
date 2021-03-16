@@ -235,6 +235,10 @@
     line-height: 0.8rem;
     color: $discount-text;
 
+    @media screen and (min-width: $small) {
+        top: 0rem;
+        right: -3rem;
+    }
 }
 
 .pricing__summary {

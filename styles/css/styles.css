@@ -360,6 +360,13 @@ main {
   color: #ff8c66;
 }
 
+@media screen and (min-width: 412px) {
+  .pricing__label__discount {
+    top: 0rem;
+    right: -3rem;
+  }
+}
+
 .pricing__summary {
   border-top: 1px solid #eaeefb;
 }
