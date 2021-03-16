@@ -40,11 +40,11 @@
 
         <fieldset class="pricing__billing">
           <legend class="hidden-visually">Choose billing frequency</legend>
-          <div class="pricing__toggle">
-            <input type="radio" name="billing" value="monthly" id="monthly" checked>
-            <label for="monthly">Monthly Billing</label>
-            <input type="radio" name="billing" value="yearly" id="yearly">
-            <label for="yearly">Yearly Billing</label>
+          <div class="pricing__toggle-wrapper">
+            <input type="radio" name="billing" value="monthly" id="monthly" class="pricing__input" checked>
+            <label for="monthly" class="pricing__label monthly">Monthly Billing</label>
+            <input type="radio" name="billing" value="yearly" id="yearly" class="pricing__input">
+            <label for="yearly"  class="pricing__label">Annual Billing<span class="pricing__label__discount">-25%</span></label>
           </div>
         </fieldset>
         <div class="pricing__summary">

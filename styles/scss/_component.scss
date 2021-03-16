@@ -1,5 +1,5 @@
 .pricing {
-	padding: 2.5rem 1.5rem 5.5rem;
+	padding: 2.5rem 0.75rem 5.5rem;
 	text-align: center;
 }
 
@@ -92,10 +92,12 @@
     }
 
     &:focus::-webkit-slider-thumb {
+        background-color: $slider-thumb-active;
         box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem $slider-bar;
     }
 
     &:focus::-moz-range-thumb {
+        background-color: $slider-thumb-active;
         box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem $slider-bar;
     }
 
@@ -125,11 +127,113 @@
 .pricing__billing {
     display: flex;
     justify-content: space-between;
-    padding: 0 1.5rem 2.25rem;
+    padding-bottom: 2.25rem;
     border: 0;
+
+    // focus state for the toggle
+    &:focus-within label:first-of-type::after {
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px $toggle-active-background;
+    }
 }
 
-.pricing__toggle {
+.pricing__toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+}
+
+.pricing__label {
+    position: relative;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: $medium;
+    line-height: 1.5rem;
+    color: $main-text;
+    z-index: 2;
+
+    // toggle switch =============================
+    &:first-of-type {
+        padding-right: 3.5rem;
+
+        &::before, &::after {
+            content: '';
+            overflow: hidden;
+            position: absolute;
+            vertical-align: middle;
+        }
+
+        &::before {
+            position: absolute;
+            right: $toggle-padding;
+            top: $toggle-padding;
+            height: calc(1.5rem - (2 * 2px)); //height of the switch - double padding
+            width: calc(1.5rem - (2 * 2px));
+            background-color: #fff;
+            border-radius: 100%;
+            transition: right 0.2s ease-in-out;
+            z-index: 2;  // same as the labels
+        }
+
+        &::after {
+            height: 1.5rem;
+            width: 2.75rem;
+            margin: 0 0.75rem;
+            background-color: $toggle-background;
+            border-radius: 0.75rem; //half the height
+            transition: background-color 0.2s ease-in-out;
+        }
+    }
+
+    &:last-of-type {
+        //this creates an overlap of the two labels where the toggle is
+        margin-left: -3rem; 
+        padding-left: 3.5rem;
+    }
+}
+
+.pricing__input {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    appearance: none;
+    background: none;
+    opacity: 0.00001;
+
+    &:first-of-type {
+        left: 0;
+
+        &:checked ~ label:first-of-type::before {
+            right: calc(1.25rem + 2px);
+        }
+        
+        &:not(:checked) ~ label:first-of-type::after {
+            background-color: $toggle-active-background;
+        }
+    }
+
+    &:last-of-type {
+        right: 0;
+
+        &:checked ~ label:last-of-type {
+            // this moves the second label back so that the first one is mouse and touch screen accessible
+            z-index: 1;
+        }
+    }
+}
+
+.pricing__label__discount {
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    height: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    background: $discount-background;
+    border-radius: 0.75rem;
+    font-size: 0.625rem;
+    font-weight: $medium;
+    line-height: 0.8rem;
+    color: $discount-text;
 
 }
 

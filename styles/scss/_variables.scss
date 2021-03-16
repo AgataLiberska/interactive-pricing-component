@@ -16,8 +16,10 @@ $strong-text: hsl(227, 35%, 25%);
 $slider-background: hsl(224, 65%, 95%);
 $slider-bar: hsl(174, 77%, 80%);
 $slider-thumb: hsl(174, 86%, 45%);
+$slider-thumb-active: hsl(174, 66%, 41%);
 
 $toggle-background: hsl(223, 50%, 87%);
+$toggle-active-background: hsl(174, 86%, 45%);
 $toggle-color: hsl(0, 0%, 100%);
 
 $discount-background: hsl(14, 92%, 95%);
@@ -30,6 +32,10 @@ $cta-hover: hsl(0, 0%, 100%);
 // slider
 $thumb-size: 2.5rem;
 $track-height: 0.5rem;
+
+
+//toggle
+$toggle-padding: 2px;
 
 //widths
 $large: 768px;
