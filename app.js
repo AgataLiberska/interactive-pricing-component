@@ -2,23 +2,28 @@ const pricing = {
     views: [
         {
             views: "10k",
+            aria: "10 thousand page views",
             price: 8,
         },
         {
             views: "50K",
+            aria: "50 thousand page views",
             price: 12,
         },
         {
             views: "100K",
+            aria: "100 thousand page views",
             price: 16,
         },
         {
             views: "500k",
+            aria: "500 thousand page views",
             price: 24,
         },
         {
             views: "1m",
-            price: 36
+            aria: "1 million page views",
+            price: 36,
         }   
     ],
     discount: 0.25,
@@ -43,6 +48,7 @@ function fillSlider() {
 
 function updateViews(index) {
     pageviews.textContent = `${pricing.views[index].views}`;
+    pageviews.setAttribute("aria-label", `${pricing.views[index].aria}`)
 }
 
 function updatePrice(index) {

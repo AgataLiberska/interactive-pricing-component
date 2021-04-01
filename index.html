@@ -25,12 +25,12 @@
       <form class="pricing__form js-form">
         <div class="pricing__info">
           <span class="pricing__views" aria-live="polite">
-            <span class="js-views pricing__views-number">100K </span>
+            <span class="js-views pricing__views-number" aria-label="">100K </span>
             Pageviews
           </span>
           <div class="pricing__price__input">
             <label for="pageviews" class="hidden-visually">Choose monthly pageviews</label>
-            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__price__slider" aria-label="Choose monthly pageviews number">
+            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__price__slider">
           </div>
           <span class="pricing__price" aria-live="polite">
             $ <span class="js-price">16.00</span>
@@ -44,7 +44,7 @@
             <input type="radio" name="billing" value="monthly" id="monthly" class="pricing__input" checked>
             <label for="monthly" class="pricing__label monthly">Monthly Billing</label>
             <input type="radio" name="billing" value="yearly" id="yearly" class="pricing__input">
-            <label for="yearly"  class="pricing__label">Annual Billing<span class="pricing__label__discount">-25%</span></label>
+            <label for="yearly"  class="pricing__label">Annual Billing<span class="pricing__label__discount" aria-label="25% off">-25%</span></label>
           </div>
         </fieldset>
         <div class="pricing__summary">
