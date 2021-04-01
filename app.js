@@ -44,10 +44,16 @@ function updateViews(index) {
     pageviews.innerHTML = pricing.views[index].views;
 }
 
+function updatePrice(index) {
+    price.innerHTML = pricing.views[index].price;
+}
+
 fillSlider();
 
 slider.addEventListener('change', (e) => {
 	fillSlider();
     updateViews(e.target.value);
-    //updatePrice(e.target.value);
+    updatePrice(e.target.value);
 });
+
+
