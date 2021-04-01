@@ -1,28 +1,28 @@
-const pricing = {
+const pricingConfig = {
     views: [
         {
             views: "10k",
-            aria: "10 thousand page views",
+            aria: "10 thousand PageViews",
             price: 8,
         },
         {
             views: "50K",
-            aria: "50 thousand page views",
+            aria: "50 thousand PageViews",
             price: 12,
         },
         {
             views: "100K",
-            aria: "100 thousand page views",
+            aria: "100 thousand PageViews",
             price: 16,
         },
         {
             views: "500k",
-            aria: "500 thousand page views",
+            aria: "500 thousand PageViews",
             price: 24,
         },
         {
             views: "1m",
-            aria: "1 million page views",
+            aria: "1 million PageViews",
             price: 36,
         }   
     ],
@@ -47,15 +47,17 @@ function fillSlider() {
 }
 
 function updateViews(index) {
-    pageviews.textContent = `${pricing.views[index].views}`;
-    pageviews.setAttribute("aria-label", `${pricing.views[index].aria}`)
+    pageviews.textContent = `${pricingConfig.views[index].views}`;
+    pageviews.setAttribute("aria-label", `${pricingConfig.views[index].aria}`)
 }
 
 function updatePrice(index) {
     if (form.billing.value === "yearly") {
-        price.textContent = `${(pricing.views[index].price * (1 - pricing.discount)).toFixed(2)}`;
+        price.textContent = `${(pricingConfig.views[index].price * (1 - pricingConfig.discount)).toFixed(2)}`;
+        price.setAttribute("aria-label", `${pricingConfig.views[index].price * (1 - pricingConfig.discount)} dollars per month`)
     } else {
-        price.textContent = `${pricing.views[index].price.toFixed(2)}`;
+        price.textContent = `${pricingConfig.views[index].price.toFixed(2)}`;
+        price.setAttribute("aria-label", `${pricingConfig.views[index].price} dollars per month`)
     }
     
 }
