@@ -153,6 +153,10 @@ main {
   letter-spacing: 1.8px;
 }
 
+.pricing__views-number {
+  padding-right: 0.5rem;
+}
+
 @media (min-width: 48rem) {
   .pricing__views {
     -ms-grid-column: 1;
