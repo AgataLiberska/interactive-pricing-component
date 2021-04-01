@@ -25,6 +25,7 @@ const pricing = {
 }
 
 const slider = document.getElementById('pageviews-slider');
+const form = document.querySelector('.js-form');
 const pageviews = document.querySelector('.js-views');
 const price = document.querySelector('.js-price');
 
@@ -41,19 +42,33 @@ function fillSlider() {
 }
 
 function updateViews(index) {
-    pageviews.innerHTML = pricing.views[index].views;
+    pageviews.textContent = `${pricing.views[index].views}`;
 }
 
 function updatePrice(index) {
-    price.innerHTML = pricing.views[index].price;
+    if (form.billing.value === "yearly") {
+        price.textContent = `${(pricing.views[index].price * (1 - pricing.discount)).toFixed(2)}`;
+    } else {
+        price.textContent = `${pricing.views[index].price.toFixed(2)}`;
+    }
+    
 }
 
 fillSlider();
 
 slider.addEventListener('change', (e) => {
 	fillSlider();
-    updateViews(e.target.value);
-    updatePrice(e.target.value);
 });
 
+form.addEventListener('change', e => {
+    switch(e.target.name) {
+        case 'pageviews' :
+            updateViews(e.target.value);
+            updatePrice(e.target.value);
+            break;
+        case 'billing' :
+            updatePrice(form.pageviews.value);
+            break;
+    }
+})
 

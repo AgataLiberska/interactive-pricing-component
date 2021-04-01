@@ -22,7 +22,7 @@
         <h1 class="pricing__heading">Simple, traffic-based pricing</h1>
         <p class="pricing__tagline">Sign-up for our 30-day trial. No credit card required.</p>
       </header>
-      <form class="pricing__form">
+      <form class="pricing__form js-form">
         <div class="pricing__info">
           <span class="pricing__views" aria-live="polite">
             <span class="js-views pricing__views-number">100K </span>
@@ -30,7 +30,7 @@
           </span>
           <div class="pricing__price__input">
             <label for="pageviews" class="hidden-visually">Choose monthly pageviews</label>
-            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" class="pricing__price__slider" aria-label="Choose monthly pageviews number">
+            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__price__slider" aria-label="Choose monthly pageviews number">
           </div>
           <span class="pricing__price" aria-live="polite">
             $ <span class="js-price">16.00</span>
