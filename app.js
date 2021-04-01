@@ -33,6 +33,7 @@ const slider = document.getElementById('pageviews-slider');
 const form = document.querySelector('.js-form');
 const pageviews = document.querySelector('.js-views');
 const price = document.querySelector('.js-price');
+const srInfo = document.querySelector('.js-sr-info');
 
 function fillSlider() {
     const sliderProgress = 'hsl(174, 77%, 80%)';
@@ -46,20 +47,24 @@ function fillSlider() {
         ${sliderBackground} ${breakpoint})`;
 }
 
-function updateViews(index) {
-    pageviews.textContent = `${pricingConfig.views[index].views}`;
-    pageviews.setAttribute("aria-label", `${pricingConfig.views[index].aria}`)
+function getPageViews(index) {
+    return `${pricingConfig.views[index].views}`;
 }
 
-function updatePrice(index) {
+function getAriaPageViews(index) {
+    return `${pricingConfig.views[index].aria}`;
+}
+
+function getPrice(index) {
     if (form.billing.value === "yearly") {
-        price.textContent = `${(pricingConfig.views[index].price * (1 - pricingConfig.discount)).toFixed(2)}`;
-        price.setAttribute("aria-label", `${pricingConfig.views[index].price * (1 - pricingConfig.discount)} dollars per month`)
+        return pricingConfig.views[index].price * (1 - pricingConfig.discount);
     } else {
-        price.textContent = `${pricingConfig.views[index].price.toFixed(2)}`;
-        price.setAttribute("aria-label", `${pricingConfig.views[index].price} dollars per month`)
+        return pricingConfig.views[index].price;
     }
-    
+}
+
+function updateSrInfo(index) {
+    return `${getAriaPageViews(index)} ${getPrice(index)} dollars per month`;
 }
 
 fillSlider();
@@ -71,12 +76,14 @@ slider.addEventListener('change', (e) => {
 form.addEventListener('change', e => {
     switch(e.target.name) {
         case 'pageviews' :
-            updateViews(e.target.value);
-            updatePrice(e.target.value);
+            pageviews.textContent = getPageViews(e.target.value);
+            price.textContent = getPrice(e.target.value).toFixed(2);
+            srInfo.textContent = updateSrInfo(e.target.value);
             break;
         case 'billing' :
-            updatePrice(form.pageviews.value);
-            break;
+            price.textContent = getPrice(form.pageviews.value).toFixed(2);
+            srInfo.textContent = updateSrInfo(form.pageviews.value);
+            
     }
 })
 
