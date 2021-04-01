@@ -44,6 +44,7 @@ body::before {
 }
 
 main {
+  height: 100%;
   width: 100%;
 }
 
@@ -71,12 +72,26 @@ main {
   background-position: center;
 }
 
+@media (min-width: 48rem) {
+  .pricing__header {
+    margin-bottom: 3.25rem;
+    padding: 2.5rem 0;
+  }
+}
+
 .pricing__heading {
   padding: 0.5rem;
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1.75rem;
   color: #293356;
+}
+
+@media (min-width: 48rem) {
+  .pricing__heading {
+    font-size: 1.75rem;
+    line-height: 2.375rem;
+  }
 }
 
 .pricing__tagline {
@@ -86,6 +101,14 @@ main {
   font-weight: 600;
   line-height: 1.5rem;
   color: #858fad;
+}
+
+@media (min-width: 48rem) {
+  .pricing__tagline {
+    max-width: unset;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+  }
 }
 
 .pricing__form {
@@ -98,9 +121,28 @@ main {
           box-shadow: 0px 1.25rem 1.875rem -0.25rem rgba(127, 137, 185, 0.152073);
 }
 
+@media (min-width: 48rem) {
+  .pricing__form {
+    max-width: 33.75rem;
+    padding: 2.5rem 0 2rem;
+  }
+}
+
 .pricing__info {
   margin-bottom: 2.25rem;
   padding: 0 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .pricing__info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+    margin-bottom: 2.5rem;
+    padding: 0 3rem;
+  }
 }
 
 .pricing__views {
@@ -111,8 +153,38 @@ main {
   letter-spacing: 1.8px;
 }
 
+@media (min-width: 48rem) {
+  .pricing__views {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 .pricing__price__input {
   padding: 1.5rem 0 1.75rem;
+}
+
+@media (min-width: 48rem) {
+  .pricing__price__input {
+    grid-column: span 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    padding: 1.5rem 0 0;
+  }
 }
 
 .pricing__price__slider {
@@ -231,6 +303,18 @@ main {
   line-height: 2.75rem;
   color: #293356;
   letter-spacing: -0.8px;
+}
+
+@media (min-width: 48rem) {
+  .pricing__price {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    place-self: end;
+  }
 }
 
 .pricing__month {
@@ -371,6 +455,21 @@ main {
   border-top: 1px solid #eaeefb;
 }
 
+@media (min-width: 48rem) {
+  .pricing__summary {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2rem 2.75rem 0;
+  }
+}
+
 .pricing__benefits {
   list-style: none;
   margin: auto;
@@ -381,6 +480,14 @@ main {
   color: #858fad;
 }
 
+@media (min-width: 48rem) {
+  .pricing__benefits {
+    padding: unset;
+    margin: unset;
+    text-align: left;
+  }
+}
+
 .pricing__benefits__item {
   padding-bottom: 0.625rem;
 }
@@ -389,6 +496,12 @@ main {
   content: url("/images/icon-check.svg");
   display: inline;
   padding-right: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .pricing__benefits__item {
+    padding-bottom: 0.75rem;
+  }
 }
 
 .pricing__submit {
