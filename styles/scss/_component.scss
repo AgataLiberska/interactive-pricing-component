@@ -1,0 +1,358 @@
+.pricing {
+	padding: 2.5rem 0.75rem 5.5rem;
+	text-align: center;
+}
+
+.pricing__header {
+	margin-bottom: 2rem;
+	padding: 2rem 0;
+	background-image: url('/images/pattern-circles.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+
+    @include breakpoint-up(large) {
+        margin-bottom: 3.25rem;
+        padding: 2.5rem 0;
+    }
+}
+
+.pricing__heading {
+	padding: 0.5rem;
+	font-size: 1.25rem;
+	font-weight: $bold;
+	line-height: 1.75rem;
+	color: $strong-text;
+
+    @include breakpoint-up(large) {
+        font-size: 1.75rem;
+        line-height: 2.375rem;
+    }
+}
+
+.pricing__tagline {
+	max-width: 11rem;
+	margin: auto;
+	font-size: 0.8125rem;
+	font-weight: $medium;
+	line-height: 1.5rem;
+	color: $main-text;
+
+    @include breakpoint-up(large) {
+        max-width: unset;
+        font-size: 0.9375rem;
+        line-height: 1.25rem;
+    }
+}
+
+.pricing__form {
+    max-width: 25rem;
+    margin: auto;
+	padding: 2rem 0;
+	border-radius: 0.5rem;
+	background: $card-background;
+	box-shadow: 0px 1.25rem 1.875rem -0.25rem rgba(127, 137, 185, 0.152073);
+
+    @include breakpoint-up(large) {
+        max-width: 33.75rem;
+        padding: 2.5rem 0 2rem;
+    }
+}
+
+.pricing__info {
+    margin-bottom: 2.25rem;
+    padding: 0 1.5rem;
+
+    @include breakpoint-up(large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: stretch;
+        margin-bottom: 2.5rem;
+        padding: 0 3rem;
+    
+    }
+}
+
+.pricing__views {
+	font-size: 0.75rem;
+	font-weight: $bold;
+	color: $main-text;
+	text-transform: uppercase;
+	letter-spacing: 1.8px;
+
+    &-number {
+        padding-right: 0.5rem;
+    }
+
+    @include breakpoint-up(large) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+.pricing__price__input {
+	padding: 1.5rem 0 1.75rem;
+
+    @include breakpoint-up(large) {
+        grid-column: span 2;
+        grid-row: 2 / 3;
+        padding: 1.5rem 0 0 ;
+    }
+}
+
+.pricing__price__slider {
+	width: 100%;
+	height: $track-height;
+	background: transparent;
+	border-radius: 5px;
+	-webkit-appearance: none;  
+
+	&::-webkit-slider-runnable-track {
+		@include track;
+	}
+	&::-moz-range-track {
+		@include track;
+	}
+	&::-ms-track {
+		@include track;
+	}
+
+	&::-ms-fill-upper {
+		@include track;
+	}
+
+	&::-webkit-slider-thumb {
+		@include thumb;
+	}
+
+	&::-moz-range-thumb {
+		@include thumb;
+	}
+
+	&::-ms-thumb {
+		@include thumb;
+	}
+    
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus::-webkit-slider-thumb {
+        background-color: $slider-thumb-active;
+        box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem $slider-bar;
+    }
+
+    &:focus::-moz-range-thumb {
+        background-color: $slider-thumb-active;
+        box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem $slider-bar;
+    }
+
+}
+
+.pricing__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: $bold;
+    line-height: 2.75rem;
+    color: $strong-text;
+    letter-spacing: -0.8px;
+
+    @include breakpoint-up(large) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        place-self: end;
+    }
+}
+
+.pricing__month {
+    display: inline-block;
+    padding-left: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: $medium;
+    line-height: 1.25rem;
+    color: $main-text;
+    letter-spacing: 0px;
+}
+
+.pricing__billing {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2.25rem;
+    border: 0;
+
+    // focus state for the toggle
+    &:focus-within label:first-of-type::after {
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px $toggle-active-background;
+    }
+}
+
+.pricing__toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+}
+
+.pricing__label {
+    position: relative;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: $medium;
+    line-height: 1.5rem;
+    color: $main-text;
+    z-index: 2;
+
+    // toggle switch =============================
+    &:first-of-type {
+        padding-right: 3.5rem;
+
+        &::before, &::after {
+            content: '';
+            overflow: hidden;
+            position: absolute;
+            vertical-align: middle;
+        }
+
+        &::before {
+            position: absolute;
+            right: $toggle-padding;
+            top: $toggle-padding;
+            height: calc(1.5rem - (2 * #{$toggle-padding})); //height of the switch - double padding
+            width: calc(1.5rem - (2 * #{$toggle-padding}));
+            background-color: #fff;
+            border-radius: 100%;
+            transition: right 0.2s ease-in-out;
+            z-index: 2;  // same as the labels
+        }
+
+        &::after {
+            height: 1.5rem;
+            width: 2.75rem;
+            margin: 0 0.75rem;
+            background-color: $toggle-background;
+            border-radius: 0.75rem; //half the height
+            transition: background-color 0.2s ease-in-out;
+        }
+    }
+
+    &:last-of-type {
+        //this creates an overlap of the two labels where the toggle is
+        margin-left: -3rem; 
+        padding-left: 3.5rem;
+    }
+}
+
+.pricing__input {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    appearance: none;
+    background: none;
+    opacity: 0.00001;
+
+    &:first-of-type {
+        left: 0;
+
+        &:checked ~ label:first-of-type::before {
+            right: calc(1.25rem + 2px);
+        }
+        
+        &:not(:checked) ~ label:first-of-type::after {
+            background-color: $toggle-active-background;
+        }
+    }
+
+    &:last-of-type {
+        right: 0;
+
+        &:checked ~ label:last-of-type {
+            // this moves the second label back so that the first one is mouse and touch screen accessible
+            z-index: 1;
+        }
+    }
+}
+
+.pricing__label__discount {
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    height: 1.25rem;
+    padding: 0.25rem 0.5rem;
+    background: $discount-background;
+    border-radius: 0.75rem;
+    font-size: 0.625rem;
+    font-weight: $medium;
+    line-height: 0.8rem;
+    color: $discount-text;
+
+    @include breakpoint-up(medium) {
+        top: 0rem;
+        right: -3rem;
+    }
+}
+
+.pricing__summary {
+    border-top: 1px solid $slider-background;
+
+    @include breakpoint-up(large) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 2.75rem 0;
+    }
+}
+
+.pricing__benefits {
+    list-style: none;
+    margin: auto;
+    padding: 2.5rem 1rem 2rem;
+    font-size: 0.75rem;
+    font-weight: $medium;
+    line-height: 1rem;
+    color: $main-text;
+
+    @include breakpoint-up(large) {
+        padding: unset;
+        margin: unset;
+        text-align: left;
+    }
+}
+
+.pricing__benefits__item {
+    padding-bottom: 0.625rem;
+
+    &::before {
+        content: url('/images/icon-check.svg');
+        display: inline;
+        padding-right: 1rem;
+    }
+
+    @include breakpoint-up(large) {
+        padding-bottom: 0.75rem;
+    }
+}
+
+.pricing__submit {
+    padding: 0.75rem 3rem;
+    background-color: $cta-background;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: $font;
+    font-size: 0.75rem;
+    color: $cta-text;
+    cursor: pointer;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+        color: $cta-hover;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem $cta-text;
+    }
+}

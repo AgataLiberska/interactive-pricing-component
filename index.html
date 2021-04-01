@@ -6,34 +6,61 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Interactive pricing component</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles/css/styles.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Interactive pricing component</title>
+
+  <script src="/app.js" defer></script>
 </head>
 <body>
+  <main>
+    <section class="pricing">
+      <header class="pricing__header">
+        <h1 class="pricing__heading">Simple, traffic-based pricing</h1>
+        <p class="pricing__tagline">Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <form class="pricing__form js-form">
+        <div class="pricing__info">
+          <span class="pricing__views" aria-live="polite">
+            <span class="js-views pricing__views-number" aria-label="">100K </span>
+            Pageviews
+          </span>
+          <div class="pricing__price__input">
+            <label for="pageviews" class="hidden-visually">Choose monthly pageviews</label>
+            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__price__slider">
+          </div>
+          <span class="pricing__price" aria-live="polite">
+            $ <span class="js-price">16.00</span>
+            <span class="pricing__month">/ month</span>
+          </span>
+        </div>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
+        <fieldset class="pricing__billing js-billing">
+          <legend class="hidden-visually">Choose billing frequency</legend>
+          <div class="pricing__toggle-wrapper">
+            <input type="radio" name="billing" value="monthly" id="monthly" class="pricing__input" checked>
+            <label for="monthly" class="pricing__label monthly">Monthly Billing</label>
+            <input type="radio" name="billing" value="yearly" id="yearly" class="pricing__input">
+            <label for="yearly"  class="pricing__label">Annual Billing<span class="pricing__label__discount" aria-label="25% off">-25%</span></label>
+          </div>
+        </fieldset>
+        <div class="pricing__summary">
+          <ul class="pricing__benefits">
+            <li class="pricing__benefits__item">Unlimited websites</li>
+            <li class="pricing__benefits__item">100% data ownership</li>
+            <li class="pricing__benefits__item">Email reports</li>
+          </ul>
+          <button class="pricing__submit">Start my trial</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>

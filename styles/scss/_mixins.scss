@@ -1,0 +1,30 @@
+@mixin track() {
+	width: 100%;
+	height: 0.5rem;
+	border-color: transparent;
+	border-radius: 5px;
+	color: transparent;
+	cursor: pointer;
+}
+
+@mixin thumb() {
+	-webkit-appearance: none;
+	height: $thumb-size;
+	width: $thumb-size;
+	margin-top: calc(#{$track-height} / 2 - #{$thumb-size} / 2); //track height, thumb height
+	background-color: $slider-thumb;
+	background-image: url('/images/icon-slider.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+$breakpoints-up: ( "medium" : "25.75rem", "large" : "48rem");
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get( $breakpoints-up, $size )) {
+        @content;
+    }
+}
