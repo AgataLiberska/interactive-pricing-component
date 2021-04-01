@@ -28,24 +28,25 @@
             <span class="js-views pricing__views-number">100K </span>
             Pageviews
           </p>
-          <p class="js-sr-info" aria-live="polite">100 thousand PageViews 16 dollars per month</p>
-          <div class="pricing__price__input">
-            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__price__slider" aria-label="Choose monthly PageViews">
-          </div>
           <p class="pricing__price" aria-hidden="true">
             $ <span class="js-price">16.00</span>
             <span class="pricing__month">/ month</span>
           </p>
+          <p class="js-sr-info hidden-visually" aria-live="polite">100 thousand PageViews 16 dollars per month</p>
+          <div class="pricing__slider-container">
+            <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__slider" aria-label="Choose monthly PageViews">
+          </div>
+          <fieldset class="pricing__billing js-billing" aria-label="Choose billing frequency">
+            <div class="pricing__toggle-wrapper">
+              <input type="radio" name="billing" value="monthly" id="monthly" class="pricing__input" checked>
+              <label for="monthly" class="pricing__label monthly">Monthly Billing</label>
+              <input type="radio" name="billing" value="yearly" id="yearly" class="pricing__input">
+              <label for="yearly"  class="pricing__label">Annual Billing<span class="pricing__label__discount" aria-label="25% off">-25%</span></label>
+            </div>
+          </fieldset>
         </div>
 
-        <fieldset class="pricing__billing js-billing" aria-label="Choose billing frequency">
-          <div class="pricing__toggle-wrapper">
-            <input type="radio" name="billing" value="monthly" id="monthly" class="pricing__input" checked>
-            <label for="monthly" class="pricing__label monthly">Monthly Billing</label>
-            <input type="radio" name="billing" value="yearly" id="yearly" class="pricing__input">
-            <label for="yearly"  class="pricing__label">Annual Billing<span class="pricing__label__discount" aria-label="25% off">-25%</span></label>
-          </div>
-        </fieldset>
+
         <div class="pricing__summary">
           <ul class="pricing__benefits">
             <li class="pricing__benefits__item">Unlimited websites</li>
