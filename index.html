@@ -36,7 +36,8 @@
           <div class="pricing__slider-container">
             <input type="range" min="0" max="4" step="1" value="2" id="pageviews-slider" name="pageviews" class="pricing__slider" aria-label="Choose monthly PageViews">
           </div>
-          <fieldset class="pricing__billing js-billing" aria-label="Choose billing frequency">
+          <fieldset class="pricing__billing js-billing">
+            <legend class="hidden-visually">Choose billing frequency</legend>
             <div class="pricing__toggle-wrapper">
               <input type="radio" name="billing" value="monthly" id="monthly" class="pricing__input" checked>
               <label for="monthly" class="pricing__label monthly">Monthly Billing</label>
